@@ -1,0 +1,217 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title eigengraph
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,300,700')
+    link(rel='stylesheet', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    link(rel='icon', type='/images/x-icon' href='images/favicon.ico')
+
+  body
+  
+    .n
+      p
+    
+    .m-w
+      .w  
+        p Framework is built with microservices architecture in mind. We have prepared a reusable set of small services that can be deployed for any product with little or no modifications. Much can be achieved with configuration as most of the microservices are highly configurable. We make it easy for every service to be scaled independently to any extent necessary with little investment, using common hardware.
+        p Either Kafka or RethinkDB change feeds are used as a system eventbus. Various subsystems in most cases have no idea about existence of each other. All communications are performed via system eventbus. 
+        p Framework is built to be secure from the ground up. The only way to interface with the system from internet is via a secure gateway. Only those subsystems that have to be are exposed this way. No micro service can be accessed directly from the internet. Data at rest is always encrypted, data in transit is encrypted using HTTPS and SSL.
+        div
+          span.modal-contact Contact us
+          span#close Close
+    
+    #app
+      
+        .contact-form
+          span#close.ion-ios-close-empty
+          h3 We'd love to hear about your project
+          form
+            label Your name
+            input(type='text' id='name' required)
+            label Your email
+            input(type='email' id='email' required)
+            label Your message
+            textarea(id='message' required)
+          div.submit
+            div.send-btn
+              span Send
+              span.ion-ios-paperplane-outline
+        
+        .toggle-nav
+          span
+          span
+          span
+    
+        header
+          ul
+            li#s1 What we do
+            li#s2 Process
+            li#s3 Graph-based Apis 
+            li#s4 Graph Engine 
+            li#s5 Founders 
+            li#s6 Clients
+            li#s7 Tech stack
+            li#contact Contact Us
+            
+        section#one
+          #particles
+          .welcome
+            .center
+              h4 EigenGraph
+              .border
+              p   We take care of tech for our clients.
+                | You get a highly skilled team of software engineers to help
+                | turn your ideas into real software products and best
+                | technical solutions.
+          div.down
+            span.ion-ios-arrow-thin-down
+            
+        section#two
+          .wrap.center
+            .whatwedo
+              div 
+                p What
+                p we
+                p do
+              div 
+                p Our services meet your technology needs by providing:
+                ul 
+                  li A cost-effective team to supplement your internal resources
+                  li Best-practice development and delivery velocity
+                  li Efficient and transparent communication with all parties
+                  li Excellent project management and progress visibility
+            .border
+            p.t Together we build products that are scalable and dependable, and that look and work great. Our capabilities allow you to initiate a project easily, quickly and securely, whether you require a team of two dedicated developers or a full team of 20. We have flexible engagement models that will fit perfectly into your way of working.
+        
+        section#three
+          .process
+            h2 Our Process
+            div.article.center
+            
+              article 
+                div.icon.idea
+                div
+                  h3 Clear Idea
+                  p We discuss the idea with your key people, until there is a clear understanding.
+              
+              article 
+                div.icon.doc
+                div
+                  h3 Tech document
+                  p Based on gathered information we prepare a comprehesive technology 
+                    | specification document that outlines all necessary 
+                    | details of the system backend.
+                  
+            div.article.center
+            
+              article 
+                div.icon.design
+                div
+                  h3 Unique design
+                  p UI/UX design can be done by our graphics designers. If preferred, 
+                    | You can have the UI/UX design done by your preferred graphic designers.
+              
+              article 
+                div.icon.control
+                div
+                  h3 Control over the work
+                  p We plan and implement the system using iterate approach. We communicate
+                    | with you during the week to 
+                    | ensure that everyone is on the same page and happy with the progress.
+          .apis
+            .center
+              div
+                p Graph-based APIs
+              div
+                p   We believe that graph-based APIs are easier to implement, understand and use.
+                  | Expanding and documenting graph-based APIs is what we do best.
+                  | We use the same Graph API approach of nodes and edges that companies like Facebook use.
+                div.contact 
+                  span Contact us
+        section#four 
+          div 
+            h3 Graph-Engine Framework
+            article 
+              p.center   Over the last two years we have implemented a framework that greatly 
+                | speeds up product development. It allows us to almost immediately
+                | have initial version of the backend deployed to speed up frontend development.
+              span.open-modal Read more
+        section#five 
+            .founders
+              h1 Founders
+              .images
+                div
+                  p Alex Meshkin 
+                  p Co-Founder
+                  .border
+                  .overlay
+                    span Alex is the Co-Founder and CEO of Flow Health. Alex has built and operated companies in the digital media, pharmaceutical, automotive and healthcare industries. The common denominator has been leveraging software to enable an unfair advantage.
+                div
+                  p Dmitry Shingarev
+                  p Founder and CEO
+                  .border
+                  .overlay
+                    span Makes sure projects are completed successfully, 15+ years in industry
+                div
+                  p Divakar Rayapaty
+                  p Co-Founder
+                  .border
+                  .overlay
+                    span Full Stack Generalist, Architect, @Priceline.com
+        section#six 
+          .clients.center
+              div
+                h1 Our clients
+              div#peppermint.peppermint.peppermint-inactive
+                .slide-1
+                  img(src="images/fh.png")
+                  h4.fh flow health
+                  p EigenGraph has been indispensible to Flow Health. We've saved significant money and didn't sacrifice quality. I would highly recommend using EigenGraph for highly complex backend system to simple mobile apps. They are my go to team for any software development need. 
+                  a(href='http://flowhealth.com') flowhealth.com
+                .slide-2
+                  img(src="images/sparkite_logo.png")
+                  p I enjoyed working with Dmitry and his team. They delivered on time and communication was excellent.
+                  a(href='http://sparkite.com') sparkite.com
+                .slide-3
+                  img(src="images/mb_logo.png" class='mbp-logo')
+                  p I have been working with Dmitry and his team for over 9 months now and they are some of the best developers I have ever worked with. Dmitry is extremely efficient on managing the project, and thoroughly understands all the business requirements. His team is able to fully execute on all tasks in a timely fashion while delivering stunning results that were well above expectations.I would highly recommend them to any company looking for development work to be done
+                  a(href='http://makersbrand.com') makersbrand.com
+              .controls
+                span#slide-1.control.active
+                span#slide-2.control
+                span#slide-3.control
+          .stack
+            .center
+              h1 Tech Stack
+              div 
+                p Data storage: 
+                  span RethinkDB
+                p System Bus: 
+                  span Either RethinkDB or Kafka
+                p Microservices: 
+                  span Node.js
+                p Search: 
+                  span ElasticSearch
+                p Caching: 
+                  span Redis
+                p Analytics: 
+                  span Spark
+                p Statistics: 
+                  span InfluxDB
+                p CI: 
+                  span Strider
+                p Deployment: 
+                  span AWS, any other cloud platform
+                p Web Apps: 
+                  span React + Redux
+                p iOS, Android: 
+                  span Native
+        footer 
+          p
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    script(src='build/build.js')
