@@ -69,6 +69,12 @@ gulp.task('images', [], function () {
     .pipe(connect.reload());
 });
 
+gulp.task('assets', [], function () {
+  return gulp.src('src/assets/**/*.*')
+    .pipe(gulp.dest('dist/assets'))
+    .pipe(connect.reload());
+});
+
 gulp.task('clean', function () {
   return gulp.src('dist')
     .pipe(rimraf());
@@ -110,6 +116,6 @@ gulp.task('deploy', ['build'], function (done) {
   ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
 });
 
-gulp.task('build', ['js', 'html', 'other-html', 'css', 'images']);
+gulp.task('build', ['js', 'html', 'other-html', 'css', 'images', 'assets']);
 gulp.task('serve', ['connect', 'watch']);
 gulp.task('default', ['build']);
