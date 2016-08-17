@@ -14,7 +14,7 @@ $(document).ready(function(){
   particlesJS.load('particles', 'assets/particles.json', function() {
   });
 
-  $('footer p').text('@ ' + new Date().getFullYear() + ' OOO "Flow Health"');
+  $('footer p').text('© ' + new Date().getFullYear() + ' OOO "Flow Health"');
 
   $('.toggle-nav').click(function() {
     $(this).toggleClass('active')
