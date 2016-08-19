@@ -19,7 +19,7 @@ html(lang="en")
     .m-w
       .w  
         p Framework is built with microservices architecture in mind. We have prepared a reusable set of small services that can be deployed for any product with little or no modifications. Much can be achieved with configuration as most of the microservices are highly configurable. We make it easy for every service to be scaled independently to any extent necessary with little investment, using common hardware.
-        p Either Kafka or RethinkDB change feeds are used as a system eventbus. Various subsystems in most cases have no idea about existence of each other. All communications are performed via system eventbus. 
+        p Either RabbitMQ or RethinkDB change feeds are used as a system eventbus. Various subsystems in most cases have no idea about existence of each other. All communications are performed via system eventbus. 
         p Framework is built to be secure from the ground up. The only way to interface with the system from internet is via a secure gateway. Only those subsystems that have to be are exposed this way. No micro service can be accessed directly from the internet. Data at rest is always encrypted, data in transit is encrypted using HTTPS and SSL.
         div
           span.modal-contact Contact us
@@ -103,9 +103,7 @@ html(lang="en")
                 div.icon.doc
                 div
                   h3 Tech document
-                  p Based on gathered information we prepare a comprehesive technology 
-                    | specification document that outlines all necessary 
-                    | details of the system backend.
+                  p Based on gathered information we prepare a comprehensive technology specification document that outlines all necessary details of the system.
                   
             div.article.center
             
@@ -113,16 +111,13 @@ html(lang="en")
                 div.icon.design
                 div
                   h3 Unique design
-                  p UI/UX design can be done by our graphics designers. If preferred, 
-                    | You can have the UI/UX design done by your preferred graphic designers.
+                  p  UI/UX design can be done by our graphic designers to deliver top of the line front-end experience. We can work with your preferred designers as well.
               
               article 
                 div.icon.control
                 div
                   h3 Control over the work
-                  p We plan and implement the system using iterate approach. We communicate
-                    | with you during the week to 
-                    | ensure that everyone is on the same page and happy with the progress.
+                  p  We plan and implement your system using iterative approach. We communicate with you during the week to ensure that everyone is on the same page and happy with the progress.
           .apis
             .center
               div
@@ -137,9 +132,7 @@ html(lang="en")
           div 
             h3 Graph-Engine Framework
             article 
-              p.center   Over the last two years we have implemented a framework that greatly 
-                | speeds up product development. It allows us to almost immediately
-                | have initial version of the backend deployed to speed up frontend development.
+              p.center Over the last two years we have implemented a framework that greatly speeds up product development. It allows us to almost immediately have initial version of the back-end deployed.
               span.open-modal Read more
         section#five 
             .founders
@@ -192,7 +185,7 @@ html(lang="en")
                 p Data storage: 
                   span RethinkDB
                 p System Bus: 
-                  span Either RethinkDB or Kafka
+                  span Either RethinkDB or RabbitMQ
                 p Microservices: 
                   span Node.js
                 p Search: 
