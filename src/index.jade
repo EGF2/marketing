@@ -9,6 +9,7 @@ html(lang="en")
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,300,700')
     link(rel='stylesheet', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+    link(rel='stylesheet', href='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
     link(rel='icon', type='/images/x-icon' href='images/favicon.ico')
 
   body
@@ -16,7 +17,7 @@ html(lang="en")
     .n
       p
     
-    .m-w
+    .m-w(tabindex="-1")
       .w  
         p Framework is built with microservices architecture in mind. We have prepared a reusable set of small services that can be deployed for any product with little or no modifications. Much can be achieved with configuration as most of the microservices are highly configurable. We make it easy for every service to be scaled independently to any extent necessary with little investment, using common hardware.
         p Either RabbitMQ or RethinkDB change feeds are used as a system eventbus. Various subsystems in most cases have no idea about existence of each other. All communications are performed via system eventbus. 
@@ -118,7 +119,7 @@ html(lang="en")
                 div
                   h3 Control over the work
                   p  We plan and implement your system using iterative approach. We communicate with you during the week to ensure that everyone is on the same page and happy with the progress.
-          .apis
+          .apis#apis
             .center
               div
                 p Graph-based APIs
@@ -157,37 +158,38 @@ html(lang="en")
                   .overlay
                     span Full Stack Generalist, Architect, @Priceline.com
         section#six 
-          .clients.center
+          .clients
               div
                 h1 Our clients
-              div#peppermint.peppermint.peppermint-inactive
+              div.slider
                 .slide-1
-                  img(src="images/fh.png")
-                  h4.fh flow health
+                  div 
+                    img(src="images/fh.png")
+                    h4.fh flow health
                   p EigenGraph has been indispensible to Flow Health. We've saved significant money and didn't sacrifice quality. I would highly recommend using EigenGraph for highly complex backend system to simple mobile apps. They are my go to team for any software development need. 
                   a(href='http://flowhealth.com') flowhealth.com
                 .slide-2
-                  img(src="images/sparkite_logo.png")
+                  img.sparkite-logo(src="images/sparkite_logo.png")
                   p I enjoyed working with Dmitry and his team. They delivered on time and communication was excellent.
                   a(href='http://sparkite.com') sparkite.com
                 .slide-3
                   img(src="images/mb_logo.png" class='mbp-logo')
                   p I have been working with Dmitry and his team for over 9 months now and they are some of the best developers I have ever worked with. Dmitry is extremely efficient on managing the project, and thoroughly understands all the business requirements. His team is able to fully execute on all tasks in a timely fashion while delivering stunning results that were well above expectations.I would highly recommend them to any company looking for development work to be done
                   a(href='http://makersbrand.com') makersbrand.com
-              .controls
-                span#slide-1.control.active
-                span#slide-2.control
-                span#slide-3.control
-          .stack
+              //- .controls
+              //-   span#slide-1.control.active
+              //-   span#slide-2.control
+              //-   span#slide-3.control
+          .stack#stack
             .center
               h1 Tech Stack
               div 
                 p Data storage: 
-                  span RethinkDB
+                  span RethinkDB, Cassandra, DynamoDB
                 p System Bus: 
-                  span Either RethinkDB or RabbitMQ
+                  span RethinkDB, Kafka, RabbitMQ
                 p Microservices: 
-                  span Node.js
+                  span Node.js, Golang
                 p Search: 
                   span ElasticSearch
                 p Caching: 
@@ -201,10 +203,11 @@ html(lang="en")
                 p Deployment: 
                   span AWS, any other cloud platform
                 p Web Apps: 
-                  span React + Redux
+                  span React + Redux, AngularJS, Backbone
                 p iOS, Android: 
                   span Native
         footer 
           p
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    script(src='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js')
     script(src='build/build.js')

@@ -22,6 +22,7 @@ $text-color = rgba(0,0,0, .7)
 
 }
 
+
 setBackground(link)
   background url(link) no-repeat center
   background-size cover
@@ -32,12 +33,15 @@ fs(val)
 .flying-block
   width 70%
   background #fff
-  height 450px
+  height 550px
   position absolute
-  top -225px
+  top -275px
   left 50%
   margin-left -35%
   box-shadow: 0px -5px 74px -13px rgba($secondary-color, .2)
+  display flex;
+  flex-direction: column;
+  justify-content: space-around;
   @media screen and (max-width: 1270px)
     height 600px
     top -300px
@@ -46,12 +50,17 @@ fs(val)
 global-reset()
 
 html, body
-  height 100%
   font-family 'Roboto', sans-serif
 
 *
   margin 0
   padding 0
+
+section#one
+  height: 100vh
+section
+  &:not(#one)
+    min-height 100vh
 
 .toggle-nav
   width 30px
@@ -305,17 +314,14 @@ header
     justify-content space-around
     &.mobile
       height 100%
-      display block
       text-align center
       display flex
       flex-direction column
       justify-content space-around
       li
-        fs 22px
+        fs 18px
         font-weight bold
         color $secondary-color
-        flex-direction column
-        padding 10px 0
         @media screen and (max-height: 620px)
           fs 18px
         @media screen and (max-height: 570px)
@@ -334,7 +340,6 @@ header
         color $main-color
 
 section#one
-  height 100%
   position relative
   text-align center
   color #fff
@@ -388,30 +393,9 @@ section#one
 
 
 section#two
-  height 130%
-  @media screen and (max-height: 580px)
-    height 140%
-  @media screen and (max-height: 540px)
-    height 150%
-  @media screen and (max-height: 505px)
-    height 160%
-  @media screen and (max-height: 470px)
-    height 170%
-  @media screen and (max-height: 440px)
-    height 180%
-  @media screen and (max-height: 415px)
-    height 190%
-  @media screen and (max-height: 390px)
-    height 200%
-  @media screen and (max-height: 370px)
-    height 210%
-  @media screen and (max-height: 350px)
-    height 220%
-  @media screen and (max-height: 330px)
-    height 230%
-  @media screen and (max-height: 320px)
-    height 240%
-  func()
+  .wrap.center
+    @media screen and (max-width: 540px)
+      width 80%
   p.t
     width 70%
     margin 0 auto
@@ -420,6 +404,8 @@ section#two
     letter-spacing 2px
     line-height 25px
     text-align center
+    @media screen and (max-height: 700px)
+      padding-bottom: 250px
     @media screen and (max-width: 900px)
       width 100%
   .whatwedo
@@ -496,55 +482,44 @@ section#two
 
 
 section#three
-  height 100%
   setBackground('../images/bg2.png')
-  position relative
-  @media screen and (max-height: 580px)
-    height 120%
-  @media screen and (max-height: 540px)
-    height 130%
-  @media screen and (max-height: 505px)
-    height 140%
-  @media screen and (max-height: 470px)
-    height 150%
-  @media screen and (max-height: 440px)
-    height 160%
-  @media screen and (max-height: 415px)
-    height 170%
-  @media screen and (max-height: 390px)
-    height 180%
-  @media screen and (max-height: 370px)
-    height 190%
-  @media screen and (max-height: 350px)
-    height 200%
-  @media screen and (max-height: 330px)
-    height 210%
-  @media screen and (max-height: 320px)
-    height 220%
+  position: relative;
   .process
-    @extend .flying-block
+    display block
+    background #fff
+    box-shadow: 0px -5px 74px -13px rgba($secondary-color, .2)
+    min-height 400px
+    width 80%
+    position: absolute;
+    left 50%
+    margin-left: -40%
+    top -200px
+    @media screen and (max-width: 900px)
+      position inherit;
+      display block
+      margin-left 0
+      left 0
+      width 100%
+      margin-top 50px
     h2
       text-align center
       color $secondary-color
       font-size 50px
-      margin 30px 0
+      padding 70px 0
       letter-spacing 5px
+      @media screen and (max-width: 900px)
+        font-size: 36px;
     .article
       display flex
       justify-content space-between
-      width 70%
-      @media screen and (max-width: 1270px)
-        margin-top 100px
-      &.center
-        @media screen and (max-width: 900px)
-          width 100%
+      &:last-child
+        padding 20px 0 50px 0
       @media screen and (max-width: 900px)
         display flex
         justify-content center
         align-items center
         flex-direction column
-        &:last-child
-          margin-top 100px
+        width 90%
       article
         margin-top 10px
         width 50%
@@ -581,10 +556,11 @@ section#three
       &:last-child
         margin-top 25px
   .apis
-    position absolute
-    bottom 100px
-    @media screen and (max-width: 700px)
-      bottom 50px
+    padding: 550px 0 200px 0;
+    @media screen and (max-width: 1100px)
+      padding 650px 0 200px 0
+    @media screen and (max-width: 900px)
+      padding 0 0 150px 0
     .center
       display flex
       justify-content space-around
@@ -602,12 +578,14 @@ section#three
             padding-right 50px
             float right
             text-align right
+            width 301px
             @media screen and (max-width: 900px)
               fs 46px
               padding 0 0 10px 0
               display block
               text-align center
               float none
+              width 100%
               @media screen and (max-width: 700px)
                 fs 36px
         &:last-child
@@ -626,40 +604,18 @@ section#three
             text-align center
 
 section#four
-  height 100%
-  @media screen and (max-height: 580px)
-    height 120%
-  @media screen and (max-height: 540px)
-    height 130%
-  @media screen and (max-height: 505px)
-    height 140%
-  @media screen and (max-height: 470px)
-    height 150%
-  @media screen and (max-height: 440px)
-    height 160%
-  @media screen and (max-height: 415px)
-    height 170%
-  @media screen and (max-height: 390px)
-    height 180%
-  @media screen and (max-height: 370px)
-    height 190%
-  @media screen and (max-height: 350px)
-    height 200%
-  @media screen and (max-height: 330px)
-    height 210%
-  @media screen and (max-height: 320px)
-    height 220%
   display flex
   justify-content center
   align-items center
-  div
-    width 65%
-    height 250px
+  >div
+    width 50%
     border solid 1px $main-color
     text-align center
     position relative
+    @media screen and (max-width: 1230px)
+      width 70%
     @media screen and (max-width: 750px)
-      width 80%
+      width 90%
     h3
       fs 50px
       color $secondary-color
@@ -668,6 +624,8 @@ section#four
         fs 40px
       @media screen and (max-width: 750px)
         fs 34px
+      @media screen and (max-width: 473px)
+        fs 28px
     article
       width 90%
       margin 0 auto
@@ -676,10 +634,18 @@ section#four
       bottom -90px
       left 15px
       right 15px
+      @media screen and (max-width: 750px)
+        left 5px
+        right 5px
+        padding-bottom 30px
       @media screen and (max-width: 600px)
         bottom -120px
       @media screen and (max-width: 550px)
         bottom -140px
+      @media screen and (max-width: 506px)
+        bottom -110px
+        width 95%
+        text-align: justify
       p
         text-align center
         color $text-color
@@ -688,33 +654,9 @@ section#four
         cursor pointer
         padding-top 10px
         display block
+        text-align: center;
 
 section#five
-  height 120%
-  @media screen and (max-height: 580px)
-    height 140%
-  @media screen and (max-height: 540px)
-    height 150%
-  @media screen and (max-height: 505px)
-    height 160%
-  @media screen and (max-height: 470px)
-    height 170%
-  @media screen and (max-height: 440px)
-    height 180%
-  @media screen and (max-height: 415px)
-    height 190%
-  @media screen and (max-height: 390px)
-    height 200%
-  @media screen and (max-height: 370px)
-    height 210%
-  @media screen and (max-height: 350px)
-    height 220%
-  @media screen and (max-height: 330px)
-    height 230%
-  @media screen and (max-height: 320px)
-    height 240%
-  @media screen and (max-width: 900px)
-    height 300%
   background #FFE5BE
   .founders
     width 60%
@@ -732,12 +674,14 @@ section#five
     .images
       display flex
       justify-content space-between
-      height 180px
+      height 240px
+      padding-bottom 300px
       @media screen and (max-width: 900px)
         flex-direction column
         justify-content center
         align-items center
         height inherit
+        padding-bottom: 50px
       >div
         height 240px
         width 300px
@@ -753,6 +697,8 @@ section#five
           setBackground('../images/Dmitry.JPG')
         &:last-child
           setBackground('../images/Divakar.jpeg')
+        @media screen and (max-width: 900px)
+          width 240px
         &:hover
           .overlay
             transform translateY(-100%)
@@ -809,95 +755,111 @@ section#five
             opacity .8
 
 section#six
-  height 100%
-  @media screen and (max-height: 580px)
-    height 120%
-  @media screen and (max-height: 540px)
-    height 130%
-  @media screen and (max-height: 505px)
-    height 140%
-  @media screen and (max-height: 470px)
-    height 150%
-  @media screen and (max-height: 440px)
-    height 160%
-  @media screen and (max-height: 415px)
-    height 170%
-  @media screen and (max-height: 390px)
-    height 180%
-  @media screen and (max-height: 370px)
-    height 190%
-  @media screen and (max-height: 350px)
-    height 200%
-  @media screen and (max-height: 330px)
-    height 210%
-  @media screen and (max-height: 320px)
-    height 220%
   position relative
   setBackground('../images/bg3.png')
   .clients
-    @extend .flying-block
-    display flex
-    justify-content center
-    align-items center
+    // @extend .flying-block
+    background #fff
+    height 450px
+    width 80%
+    margin 0 auto
+    position absolute
+    top -225px
+    left 40%
+    margin-left -30%
+    box-shadow: 0px -5px 74px -13px rgba($secondary-color, .2)
     position relative
+    display flex
     @media screen and (max-width: 900px)
-      justify-content center
+      position relative
+      top 0
+      left 0
+      width 100%
+      margin-left 0
+      height inherit
+      min-height 600px !important
       flex-direction column
-      text-align center
-    @media screen and (max-width: 650px)
-      width 90%
-      margin-left -45%
-    div
-      display inline-block
-      width 30%
+      justify-content: flex-start;
+      align-items: center;
+    .slick-slider
       @media screen and (max-width: 900px)
         width 100%
+        height 400px
+        text-align: center;
+        margin-top 50px
+      .slick-dots
+        position absolute
+        display flex
+        justify-content space-around
+        width 50px
+        height 30px
+        margin-left -25px
+        @media screen and (max-width: 900px)
+          position: absolute;
+          left 50%
+          bottom -40px
+        li
+          width 8px
+          height 8px
+          border solid 1px $secondary-color
+          display block
+          border-radius 50%
+          cursor pointer
+          transition all .5s ease
+          &.slick-active
+            background $secondary-color
+          button
+            display none
+      .slick-list
+        height 100%
+        .slick-track
+          height 100%
+          z-index: -1
+          .slick-slide
+            display flex
+            justify-content space-around
+            flex-direction column
+            h4
+              fs 24px
+              text-transform: uppercase;
+            a, div
+              text-align: center
+            a
+              color $secondary-color
+              font-weight: bold
+              fs 20px
+              text-decoration none
+            p
+              color $text-color
+              font-weight 300
+              fs 18px
+              line-height 24px
+              padding: 0 40px
+              @media screen and (max-width: 450px)
+                padding 0 20px
+                line-height 18px
+            img
+              margin 0 auto
+              &.mbp-logo
+                max-width 100px
+              &.sparkite-logo
+                max-width: 260px;
+    >div
+      display inline-block
+      width 50%
+      height: 100%
       &:first-child
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: 900px)
+          width 100%
         h1
           fs 60px
-          @media screen and (min-width: 1600px)
-            margin-top 20px
-          @media screen and (max-width: 650px)
-            fs 45px
-    .peppermint
-      h1
-        margin-top 20px
-        padding-right 100px
-        font-size 60px
-        color $secondary-color
-        float right
-        text-align right
-      .slide-1
-        margin-top 50px
-      .slide-2
-        margin-top 100px
-      .slide-1, .slide-2, .slide-3
-        width 500px
-        position relative
-        img
-          padding-bottom 10px
-          text-align center
-          max-width: 230px
-          &.mbp-logo
-            max-width 100px
-        h4
-          color #32ff71
-          text-transform uppercase
-          letter-spacing 3px
-          font-size 26px
-          &.fh
-            color #1BCFC0
-        p
-          padding 10px 0
-          color $text-color
-          fs 15px
-        a
-          display block
-          font-weight bold
-          text-decoration none
           color $secondary-color
-          padding 20px 0
-          fs 20px
+          @media screen and (max-width: 900px)
+            font-size: 48px
+            padding-top 50px
     .controls
       width 60px
       height 30px
@@ -919,9 +881,8 @@ section#six
         &.active
           background $secondary-color
   .stack
-    position absolute
-    bottom 50px
-    width 100%
+      width 100%
+      padding 100px 0
     .center
       width 60%
       margin 0 auto
@@ -931,6 +892,7 @@ section#six
       align-items center
       @media screen and (max-width: 900px)
         flex-direction column
+        width 90%
       h1
         text-align right
         font-size 50px
@@ -940,6 +902,7 @@ section#six
         @media screen and (max-width: 900px)
           text-align center
           padding 0 0 10px 0
+          fs 36px
       >div
         @media screen and (max-width: 900px)
           text-align center

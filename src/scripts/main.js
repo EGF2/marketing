@@ -11,6 +11,16 @@ $(document).ready(function(){
     }
   })
 
+  $('.slider').slick({
+    autoplay: false,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    pauseOnFocus: true,
+    swipe: true,
+    dots: true,
+    arrows: false
+  });
+
   particlesJS.load('particles', 'assets/particles.json', function() {
   });
 
@@ -34,35 +44,35 @@ $(document).ready(function(){
   })
 
   $('.down').click(function() {
-    $('html, body').animate({scrollTop: $('#two').offset().top -130 }, 'slow');
+    $('html, body').animate({scrollTop: $('#two').offset().top }, 'slow');
   })
 
   $('#s1').click(function() {
     $('header').removeClass('mobile')
     $('header ul').removeClass('mobile')
     $('.toggle-nav').removeClass('mobile')
-    $('html, body').animate({scrollTop: $('#two').offset().top -70 }, 'slow');
+    $('html, body').animate({scrollTop: $('#two').offset().top }, 'slow');
   })
 
   $('#s2').click(function() {
     $('header').removeClass('mobile')
     $('header ul').removeClass('mobile')
     $('.toggle-nav').removeClass('mobile')
-    $('html, body').animate({scrollTop: $('#three').offset().top -300}, 'slow');
+    $('html, body').animate({scrollTop: $('#three').offset().top - 200}, 'slow');
   })
 
   $('#s3').click(function() {
     $('header').removeClass('mobile')
     $('header ul').removeClass('mobile')
     $('.toggle-nav').removeClass('mobile')
-    $('html, body').animate({scrollTop: $('#three').offset().top + 200}, 'slow');
+    $('html, body').animate({scrollTop: $('#apis').offset().top - 150}, 'slow');
   })
 
   $('#s4').click(function() {
     $('header').removeClass('mobile')
     $('header ul').removeClass('mobile')
     $('.toggle-nav').removeClass('mobile')
-    $('html, body').animate({scrollTop: $('#four').offset().top + 100}, 'slow');
+    $('html, body').animate({scrollTop: $('#four').offset().top}, 'slow');
   })
 
   $('#s5').click(function() {
@@ -76,14 +86,14 @@ $(document).ready(function(){
     $('header').removeClass('mobile')
     $('header ul').removeClass('mobile')
     $('.toggle-nav').removeClass('mobile')
-    $('html, body').animate({scrollTop: $('#six').offset().top -300}, 'slow');
+    $('html, body').animate({scrollTop: $('#six').offset().top}, 'slow');
   })
 
   $('#s7').click(function() {
     $('header').removeClass('mobile')
     $('header ul').removeClass('mobile')
     $('.toggle-nav').removeClass('mobile')
-    $('html, body').animate({scrollTop: $('#six').offset().top }, 'slow');
+    $('html, body').animate({scrollTop: $('#stack').offset().top }, 'slow');
   })
 
   var slider = $('.peppermint').Peppermint({
@@ -161,7 +171,10 @@ $(document).ready(function(){
   $('.open-modal').click(function() {
     $('.m-w').addClass('active');
     $('body').css({
-      overflowY: 'hidden'
+      overflow: 'hidden'
+    })
+    $('.w').css({
+      overflow: 'auto'
     })
   })
 
