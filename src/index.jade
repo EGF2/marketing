@@ -6,13 +6,17 @@ html(lang="en")
     title eigengraph
 
     link(rel='stylesheet', type='text/css', href='build/build.css')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,300,700')
     link(rel='stylesheet', href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
-    link(rel='stylesheet', href='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
     link(rel='icon', type='/images/x-icon' href='images/favicon.ico')
 
   body
+    
+    .preload
+      .spinner
+        .bounce1
+        .bounce2
+        .bounce3
   
     .n
       p
@@ -32,12 +36,12 @@ html(lang="en")
           span#close.ion-ios-close-empty
           h3 We'd love to hear about your project
           form
-            label Your name
-            input(type='text' id='name' required)
-            label Your email
-            input(type='email' id='email' required)
-            label Your message
-            textarea(id='message' required)
+                label Your name
+                input(type='text' id='name' required)
+                label Your email
+                input(type='email' id='email' required)
+                label Your message
+                textarea(id='message' required)
           div.submit
             div.send-btn
               span Send
