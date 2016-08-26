@@ -4,6 +4,8 @@ function hexToRgb(e){var a=/^#?([a-f\d])([a-f\d])([a-f\d])$/i;e=e.replace(a,func
 
 $(document).ready(function(){
 
+  var isMobile = false;
+
   $('.contact-form').bind('DOMSubtreeModified', function(e) {
     $('body').css({
       overflow: 'hidden'
@@ -77,7 +79,7 @@ $(document).ready(function(){
     $('header').removeClass('mobile')
     $('header ul').removeClass('mobile')
     $('.toggle-nav').removeClass('mobile')
-    $('html, body').animate({scrollTop: $('#two').offset().top }, 'slow');
+    $('html, body').animate({scrollTop: $('#two').offset().top - 50 }, 'slow');
   })
 
   $('#s2').click(function() {
@@ -91,7 +93,7 @@ $(document).ready(function(){
     $('header').removeClass('mobile')
     $('header ul').removeClass('mobile')
     $('.toggle-nav').removeClass('mobile')
-    $('html, body').animate({scrollTop: $('#apis').offset().top - 150}, 'slow');
+    $('html, body').animate({scrollTop: $('#apis').offset().top - 50}, 'slow');
   })
 
   $('#s4').click(function() {
@@ -112,7 +114,7 @@ $(document).ready(function(){
     $('header').removeClass('mobile')
     $('header ul').removeClass('mobile')
     $('.toggle-nav').removeClass('mobile')
-    $('html, body').animate({scrollTop: $('#six').offset().top}, 'slow');
+    $('html, body').animate({scrollTop: $('#six').offset().top -270}, 'slow');
   })
 
   $('#s7').click(function() {
