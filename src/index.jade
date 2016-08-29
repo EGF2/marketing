@@ -24,7 +24,7 @@ html(lang="en")
     .m-w(tabindex="-1")
       .w  
         p Framework is built with microservices architecture in mind. We have prepared a reusable set of small services that can be deployed for any product with little or no modifications. Much can be achieved with configuration as most of the microservices are highly configurable. We make it easy for every service to be scaled independently to any extent necessary with little investment, using common hardware.
-        p Either RabbitMQ or RethinkDB change feeds are used as a system eventbus. Various subsystems in most cases have no idea about existence of each other. All communications are performed via system eventbus. 
+        p Kafka, RabbitMQ, IronMQ or RethinDB change feeds can be used as a system event bus. Various subsystems in most cases have no idea about existence of each other. All communications are performed via system eventbus. 
         p Framework is built to be secure from the ground up. The only way to interface with the system from internet is via a secure gateway. Only those subsystems that have to be are exposed this way. No micro service can be accessed directly from the internet. Data at rest is always encrypted, data in transit is encrypted using HTTPS and SSL.
         div
           span.modal-contact Contact us
