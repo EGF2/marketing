@@ -120,45 +120,46 @@ section
   background rgba(0, 0, 0, 0.6);
   position fixed
   top 0
+  left 0
+  right 0
+  bottom 0
   justify-content center
   align-items center
   display none
   opacity 0
-  transition all 2s ease
+  transition opacity 2s ease
   &.active
     display flex
     opacity 1
     .w
       opacity 1
+      @media screen and (max-width: 400px)
+        height 100vh
+      p
+        &:first-child
+          @media screen and (max-width: 400px)
+            margin-top: 20px
   .w
     opacity 0
-    height 60%
+    min-height 35%
     width 50%
     background #fff
     box-shadow: 0px -5px 74px -13px rgba($secondary-color, .2)
     padding 20px
+    @media screen and (max-width: 900px)
+      width 70%
+    @media screen and (max-width: 600px)
+      width 90%
+      overflow-y scroll
     div
       display flex
       justify-content space-between
+      @media screen and (max-width: 400px)
+        padding-bottom: 20px;
     #close
       cursor pointer
       background none
       color $secondary-color
-    @media screen and (max-width: 1215px)
-      width 70%
-      height 60%
-    @media screen and (max-width: 870px)
-      width 80%
-      height 70%
-    @media screen and (max-width: 640px)
-      width 90%
-      height 70%
-    @media screen and (max-width: 565px)
-      width 90%
-      height 80%
-    @media screen and (max-width: 490px)
-      width 90%
-      height 90%
     p
       color $text-color
       line-height 25px

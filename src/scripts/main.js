@@ -64,11 +64,14 @@ $(document).ready(function(){
 
   $('.contact-form #close').click(function() {
     $('.contact-form').removeClass('active').trigger('formTrigger');
-
   })
 
   $('.m-w').click(function() {
     $(this).removeClass('active')
+  })
+
+  $('.w #close').click(function() {
+    $('body').css('overflow', 'auto');
   })
 
   $('.down').click(function() {
@@ -150,13 +153,9 @@ $(document).ready(function(){
     }
   })
 
-  $('textarea').focus(function() {
-    $(this).scrollTop;
-    console.log('focused');
-  })
-
   $('.open-modal').click(function() {
     $('.m-w').addClass('active');
+    $('body').css('overflow', 'hidden')
   })
 
   $('.submit').click(function() {
