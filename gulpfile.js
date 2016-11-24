@@ -30,7 +30,7 @@ gulp.task('js', ['clean:js'], function () {
     .pipe(connect.reload());
 });
 
-gulp.task('html', ['clean:html'], function () {
+gulp.task('html', function () {
   return gulp.src('src/index.jade')
     .pipe(isDist ? through() : plumber())
     .pipe(jade({ pretty: true }))
@@ -40,7 +40,7 @@ gulp.task('html', ['clean:html'], function () {
     .pipe(connect.reload());
 });
 
-gulp.task('other-html', ['clean:html'], function () {
+gulp.task('other-html',  function () {
   return gulp.src('src/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'))
@@ -59,6 +59,22 @@ gulp.task('css', ['clean:css'], function () {
     .pipe(autoprefixer('last 2 versions', { map: false }))
     .pipe(isDist ? csso() : through())
     .pipe(rename('build.css'))
+    .pipe(gulp.dest('dist/build'))
+    .pipe(connect.reload());
+});
+
+gulp.task('other-css', ['clean:css'], function () {
+  return gulp.src('src/styles/egf2.styl')
+    .pipe(isDist ? through() : plumber())
+    .pipe(stylus({
+      // Allow CSS to be imported from node_modules and bower_components
+      'include css': true,
+      'resolve_url': true ,
+      'paths': ['./node_modules', './bower_components']
+    }))
+    .pipe(autoprefixer('last 2 versions', { map: false }))
+    .pipe(isDist ? csso() : through())
+    .pipe(rename('egf2.css'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
 });
@@ -108,6 +124,7 @@ gulp.task('watch', function () {
   gulp.watch('src/**/*.jade', ['html']);
   gulp.watch('src/**/*.html', ['other-html']);
   gulp.watch('src/styles/**/*.styl', ['css']);
+  gulp.watch('src/styles/**/*.styl', ['other-css']);
   gulp.watch('src/images/**/*', ['images']);
   gulp.watch('src/scripts/**/*.js', ['js']);
 });
@@ -116,6 +133,6 @@ gulp.task('deploy', ['build'], function (done) {
   ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
 });
 
-gulp.task('build', ['js', 'html', 'other-html', 'css', 'images', 'assets']);
+gulp.task('build', ['js', 'html', 'other-html', 'css', 'other-css', 'images', 'assets']);
 gulp.task('serve', ['connect', 'watch']);
 gulp.task('default', ['build']);
